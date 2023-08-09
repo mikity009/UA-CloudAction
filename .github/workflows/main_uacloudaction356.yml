@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_dfc9a62a0dcd4534b23653fd04088801 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_cb70e65f0e1c468bb31de5ab48424b80 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_d58f24bfd88740d695e6ead756f64b07 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_a0cf96a337084b108bccd1180211af2f }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_dfc9a62a0dcd4534b23653fd04088801 }}/uaclac4324fassfer90324rqfafrer34:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_d58f24bfd88740d695e6ead756f64b07 }}/uaclac4324fassfer90324rqfafrer34:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'uacloudaction356'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c2c19d56ea544d969f980520ebea72d8 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_dfc9a62a0dcd4534b23653fd04088801 }}/uaclac4324fassfer90324rqfafrer34:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_09b25dcd0ae046b69bc2a5b4b75f144e }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_d58f24bfd88740d695e6ead756f64b07 }}/uaclac4324fassfer90324rqfafrer34:${{ github.sha }}'
