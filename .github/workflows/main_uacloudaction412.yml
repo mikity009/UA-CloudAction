@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'uacloudaction412'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7DFD526B11F4488083EBB0A42FC92B0E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_06634884DE7147EE92EC60F9F5DFA9C9 }}
           package: .
